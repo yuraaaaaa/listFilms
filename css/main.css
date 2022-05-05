@@ -1,3 +1,63 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat Alternates', 'Arial', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    width: 50%;
+    margin: 40px auto;
+    padding: 30px;
+}
+
+.head {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn > button {
+    transition: all .3s ease-in-out;
+    font-family: 'Montserrat Alternates', 'Arial', 'Helvetica Neue', sans-serif;
+    border: 1px solid rgb(255, 145, 2);
+    background: rgb(255, 145, 2);
+    color: #fff;
+    height: 100%;
+}
+
+.btn > button:hover {
+    border: 1px solid rgb(204, 211, 104);
+    background: rgb(204, 211, 104);
+    color: #000;
+}
+
+.head__input {
+    transition: all .3s ease-in-out;
+    outline: none;
+    height: 40px;
+    width: 200px;
+    border: 1px solid rgb(255, 145, 2);
+}
+
+.head__delete:hover {
+    border: 1px solid rgb(204, 211, 104);
+    background: rgb(204, 211, 104);
+}
+
+.film {
+    font-weight: 600;
+    font-size: 50px;
+    text-align: center;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list__item {
+    width: 33%;
+}
+
 .icon-trash {
     color: black;
 }
+

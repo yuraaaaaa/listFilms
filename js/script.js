@@ -3,32 +3,56 @@ let input       = document.querySelector('.head__input');
 let btnAdd      = document.querySelector('.head__add');
 let btnDel      = document.querySelector('.head__delete');
 let btnRandom   = document.querySelector('.head__random');
+let btnReboot   = document.querySelector('.head__reboot')
 let randomFilm  = document.querySelector('.film');
 let list        = document.querySelector('.list');
 
-for (const film of films) {
-	let item = document.createElement('p');
-	item.textContent = film;
-	item.className = 'list__item';
-	list.append(item);
+addListFilms()
+// btnAdd.addEventListener('click', addListFilms)
+btnRandom.addEventListener('click', getRandomFilms);
+btnDel.addEventListener('click', delMovieWatched);
+btnReboot.addEventListener('click', reboot)
+
+function reboot() {
+	if ((films.length > 46) || (films.length < 46)) {
+		for (const film of films) {
+			let item = document.createElement('p');
+			item.textContent = film;
+			item.className = 'list__item';
+			list.append(item);
+		}
+	}
 }
 
-btnRandom.addEventListener('click', getRandomFilms);
-// btnDel.addEventListener('click', delMovieWatched)
-
+function addListFilms() {
+	for (const film of films) {
+		let item = document.createElement('p');
+		item.textContent = film;
+		item.className = 'list__item';
+		list.append(item);
+	}
+}
 
 function getRandomFilms() {	
 	let index = Math.random() * (films.length - 1) + 1;		
 	index = Math.round(index);
 	randomFilm.textContent = films[index];
-	console.log(films[index]);
+	console.log(randomFilm);
 	return films[index];
 }
 
-// function delMovieWatched() {	
-// 	let listFilms = document.querySelectorAll('.list__item');
-// 	if (randomFilm == input.value) {
-// 	}
-// 	console.log(listFilms)
-// }
-console.log(films.length)
+function delMovieWatched() {
+	// let array = films	
+	for (let i = 0; i < films.length; i++) {
+
+		if (randomFilm.textContent == films[i]) {
+			films.splice(i, 1);
+			// list.removeChild(list__item)
+		}
+	}
+	console.log(films);
+	return films;
+}
+
+
+// console.log(films)  
