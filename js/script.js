@@ -11,18 +11,6 @@ addListFilms()
 // btnAdd.addEventListener('click', addListFilms)
 btnRandom.addEventListener('click', getRandomFilms);
 btnDel.addEventListener('click', delMovieWatched);
-btnReboot.addEventListener('click', reboot)
-
-function reboot() {
-	if ((films.length > 46) || (films.length < 46)) {
-		for (const film of films) {
-			let item = document.createElement('p');
-			item.textContent = film;
-			item.className = 'list__item';
-			list.append(item);
-		}
-	}
-}
 
 function addListFilms() {
 	for (const film of films) {
@@ -31,6 +19,11 @@ function addListFilms() {
 		item.className = 'list__item';
 		list.append(item);
 	}
+}
+
+function addFilmToList() {
+	let newFilm = input.value;
+	
 }
 
 function getRandomFilms() {	
@@ -42,17 +35,12 @@ function getRandomFilms() {
 }
 
 function delMovieWatched() {
-	// let array = films	
-	for (let i = 0; i < films.length; i++) {
-
-		if (randomFilm.textContent == films[i]) {
-			films.splice(i, 1);
-			// list.removeChild(list__item)
+	let array = document.querySelectorAll('.list__item')
+	for (let i = 0; i < array.length; i++) {
+		if (array[i].innerText == randomFilm.innerText) {
+			array[i].remove()
+			films.splice(i, 1)
 		}
 	}
-	console.log(films);
 	return films;
 }
-
-
-// console.log(films)  
