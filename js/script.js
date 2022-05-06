@@ -8,7 +8,7 @@ let randomFilm  = document.querySelector('.film');
 let list        = document.querySelector('.list');
 
 addListFilms()
-// btnAdd.addEventListener('click', addListFilms)
+btnAdd.addEventListener('click', addFilmToList)
 btnRandom.addEventListener('click', getRandomFilms);
 btnDel.addEventListener('click', delMovieWatched);
 
@@ -22,15 +22,18 @@ function addListFilms() {
 }
 
 function addFilmToList() {
-	let newFilm = input.value;
-	
+	let newFilm = document.createElement('p');
+	newFilm.textContent = input.value;
+	newFilm.className = 'list__item' 
+	list.append(newFilm);
+	films.push(input.value);
+	input.value = ''
 }
 
 function getRandomFilms() {	
 	let index = Math.random() * (films.length - 1) + 1;		
 	index = Math.round(index);
 	randomFilm.textContent = films[index];
-	console.log(randomFilm);
 	return films[index];
 }
 
