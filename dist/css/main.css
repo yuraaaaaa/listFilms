@@ -1,0 +1,129 @@
+html {
+  font-size: 40px;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat Alternates", "Arial", "Helvetica Neue", sans-serif;
+}
+
+.container {
+  width: 50%;
+  margin: 40px auto;
+  padding: 30px;
+}
+
+.head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.btn > button {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  font-family: "Montserrat Alternates", "Arial", "Helvetica Neue", sans-serif;
+  border: 1px solid rgb(255, 145, 2);
+  background: rgb(255, 145, 2);
+  color: #fff;
+  height: 100%;
+}
+
+.btn > button:hover {
+  border: 1px solid rgb(204, 211, 104);
+  background: rgb(204, 211, 104);
+  color: #000;
+}
+
+.head__input {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  outline: none;
+  height: 40px;
+  width: 200px;
+  border: 1px solid rgb(255, 145, 2);
+}
+
+.head__delete:hover {
+  border: 1px solid rgb(204, 211, 104);
+  background: rgb(204, 211, 104);
+}
+
+.film {
+  font-weight: 600;
+  font-size: 50px;
+  text-align: center;
+}
+
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.list__item {
+  width: 33%;
+  font-size: 0.5rem;
+}
+
+.icon-trash {
+  color: black;
+}
+
+.searchedFilm {
+  background: rgb(226, 223, 15);
+}
+
+@media (max-width: 416px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .head {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    -ms-grid-rows: 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    gap: 5px;
+  }
+
+  .head__input {
+    width: 320px;
+  }
+
+  .btn {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 0.5fr 1fr 1fr 0.5fr;
+    grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+    gap: 5px;
+    height: 30px;
+  }
+
+  .btn button {
+    height: 50px;
+  }
+
+  .randomFilm {
+    max-width: 315px;
+    margin: 0 auto;
+  }
+
+  .film {
+    width: 315px;
+    font-size: 1.2rem;
+    overflow-wrap: break-word;
+  }
+
+  .list__item {
+    font-size: 0.3rem;
+  }
+}

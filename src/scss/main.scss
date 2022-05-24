@@ -1,6 +1,55 @@
+html {
+    font-size: 40px;
+}
+
 body {
     margin: 0;
     font-family: 'Montserrat Alternates', 'Arial', 'Helvetica Neue', sans-serif;
+}
+
+@media (max-width: 416px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .head {
+        display: grid;
+        width: 100%;
+        grid-template-rows: 2fr 1fr;
+        gap: 5px;
+
+        &__input {
+            width: 320px;
+        }
+    }
+
+
+    .btn {
+        display: grid;
+        grid-template-columns: .5fr 1fr 1fr .5fr;
+        gap: 5px;
+        height: 30px;
+
+        button {
+            height: 50px;
+        }
+    }
+
+    .randomFilm {
+        max-width: 315px;
+        margin: 0 auto;
+    }
+
+    .film {
+        width: 315px;
+        font-size: 1.2rem;
+        overflow-wrap: break-word;
+    }
+
+    .list__item {
+        font-size: 0.3rem;
+    }
 }
 
 .container {
@@ -55,9 +104,14 @@ body {
 
 .list__item {
     width: 33%;
+    font-size: .5rem;
 }
 
 .icon-trash {
     color: black;
+}
+
+.searchedFilm {
+    background: rgb(226, 223, 15);
 }
 
